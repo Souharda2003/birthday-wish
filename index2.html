@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bristi </title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+body{
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    overflow-x:hidden;
+}
+.section{
+    padding:60px 20px;
+    text-align:center;
+}
+.card{
+    max-width:800px;
+    margin:20px auto;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+}
+#lockScreen{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+input{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    width:280px;
+    margin-top:10px;
+}
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    background:white;
+    color:#ff4081;
+    font-weight:bold;
+}
+button:hover{
+    transform:scale(1.05);
+}
+#mainSite{
+    display:none;
+}
+.hero h1{
+    font-size:3rem;
+}
+.countdown{
+    font-size:1.5rem;
+    margin-top:20px;
+}
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+.gallery img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+}
+#secretMessage{
+    display:none;
+}
+.heart{
+    position:fixed;
+    top:-50px;
+    z-index:9999;
+    pointer-events:none;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(120vh);
+    }
+}
+footer{
+    padding:30px;
+    text-align:center;
+}
+</style>
+</head>
+<body>
+<!-- PASSWORD SCREEN -->
+<!-- <div id="countdownScreen" class="section">
+<h1>🎂 Bristi's Birthday Countdown</h1>
+<div class="card">
+    <h2 id="preCountdown">Loading...</h2>
+    <p>
+        Hey,This website will unlock when only 1 minute remains before Your's birthday.
+    </p>
+</div>
+</div>
+<div id="lockScreen" style="display:none;"> -->
+<div id="lockScreen">
+<h1> Birthday Wish Only For You </h1>
+<p>Enter Password</p>
+<input type="password" id="password">
+<button onclick="unlockWebsite()">
+Open
+</button>
+</div>
+<!-- MAIN WEBSITE -->
+<div id="mainSite">
+<section class="section hero">
+<h1>🎂 Happy Birthday Bristi ❤️</h1>
+<p>
+From Souharda
+</p>
+<div class="card">
+<p>
+When I first saw you,
+I fell into your eyes.
+</p>
+</div>
+<div class="countdown card" id="countdown">
+Loading...
+</div>
+</section>
+<section class="section">
+<h2> Reasons I Love You</h2>
+<div class="card">
+<p>1. Your eyes were the first thing that captured my heart.</p>
+<br>
+<p>2. You make ordinary moments feel special just by being there.</p>
+</div>
+</section>
+<section class="section">
+<h2> Our Memories</h2>
+<div class="gallery">
+<img src="photo1.jpg" alt="">
+<img src="photo2.jpg" alt="">
+<img src="photo3.jpg" alt="">
+<img src="photo4.jpg" alt="">
+</div>
+</section>
+<section class="section">
+<h2> Love Letter</h2>
+<div class="card">
+<p>
+Dear Bristi,
+<br><br>
+Happy Birthday to someone truly special! 🎂
+<br><br>
+You are Sweet, Loyal, My rock, and I'm so grateful to have you in my life.
+<br><br>
+You bring so much warmth and sweetness into my life. Every moment with you is precious.
+<br><br>
+On your special day, I wish you all the happiness, love, and joy that you deserve. 
+May this year bring you countless beautiful moments and wonderful memories.
+<br><br>
+Here's to celebrating you today and always! 🎉
+<br><br>
+With love and best wishes,
+<br>
+Your Bor 💝
+</p>
+</div>
+</section>
+<section class="section">
+<h2> Secret Surprise</h2>
+<button onclick="showSecret()">
+Unlock Surprise
+</button>
+<div id="secretMessage" class="card">
+<h2> Secret Message </h2>
+<p>
+I love you more today than yesterday,
+and I will love you more tomorrow than today.
+<br><br>
+Happy Birthday My Queen 
+</p>
+</div>
+</section>
+<section class="section">
+<button onclick="openFutureLetter()">
+📜 Please Open This Letter
+</button>
+<div id="futureLetter" class="card" style="display:none;">
+<h2>Birthday Letter</h2>
+<div class="card">
+<p>
+My Love,
+<br><br>
+If you're reading this, it means your special day has arrived. 
+Even though I wrote this earlier, my feelings for you haven't changed.
+<br><br>
+Happy Birthday to the most amazing person in my life. 
+I hope today is filled with happiness, laughter, and all the things you love. Thank you for being my source of comfort, strength, and joy.
+<br><br>
+I don't know exactly where we are when you're reading this, but I hope you're smiling. 
+I hope life is treating you kindly, and I hope you know how much you mean to me.
+<br><br>
+No matter how much time passes, one thing remains true: meeting you was one of the best things that ever happened to me. Your kindness, your smile, and the way you make ordinary moments feel special are gifts I cherish every day.
+<br><br>
+On your birthday, I wish you success in your dreams, peace in your heart, and endless reasons to smile.
+Most of all, I wish you a year filled with love—because you deserve nothing less.
+<br><br>
+Thank you for being you.
+<br><br>
+With all my love,
+<br>
+Your Future-Me ❤️
+</p>
+</div>
+</section>
+<section class="section">
+<!-- <h2> Our Song</h2>
+<p>Add your music file as music.mp3</p> -->
+<audio autoplay loop>
+    <source src="perfect.mp3" type="audio/mpeg">
+</audio>
+</section>
+<section class="section">
+<button onclick="openSecretMessage()">
+"Secret Message – Tap to Reveal"
+</button>
+<div id="SecretReveal" class="card" style="display:none;">
+<h2> Secret Message </h2>
+<div class="card-content">
+<p>
+If you opened this, it means you were curious enough to find my hidden surprise.
+<br><br>
+I just want you to know that no matter when you're reading this, you are one of the most special people in my life. 
+Your smile brightens my days, your presence makes everything better, and loving you is one of my favorite things.
+<br><br>
+Now close this message and go enjoy your day, beautiful. 💕
+</p>
+</div>
+</div>
+</section>
+<footer>
+Made With By Souharda Saha
+</footer>
+</div>
+<script>
+// PASSWORD
+function unlockWebsite(){
+    const pass =document.getElementById("password").value;
+    if(pass === "LOVEFOREVER"){
+        document.getElementById(
+        "lockScreen"
+        ).style.display="none";
+        document.getElementById(
+        "mainSite"
+        ).style.display="block";
+        document.getElementById(
+        "bgMusic"
+        ).play();
+    }else{
+        alert("Wrong Password");
+    }
+}
+// COUNTDOWN
+const unlockTime =
+new Date("June 12, 2026 23:59:00");
+function updatePreCountdown(){
+    const now = new Date();
+    const diff = unlockTime - now;
+    if(diff <= 0){
+        document.getElementById(
+        "countdownScreen"
+        ).style.display="none";
+        document.getElementById(
+        "lockScreen"
+        ).style.display="flex";
+        return;
+    }
+    const days =
+    Math.floor(diff/(1000*60*60*24));
+    const hours =
+    Math.floor((diff%(1000*60*60*24))
+    /(1000*60*60));
+    const mins =
+    Math.floor((diff%(1000*60*60))
+    /(1000*60));
+    const secs =
+    Math.floor((diff%(1000*60))
+    /1000);
+    document.getElementById(
+    "preCountdown"
+    ).innerHTML =
+    `${days} Days ${hours} Hours ${mins} Minutes ${secs} Seconds`;
+}
+setInterval(updatePreCountdown,1000);
+updatePreCountdown();
+// SECRET MESSAGE
+function showSecret(){
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth()+1;
+    if(day === 13 && month === 6){
+        document.getElementById(
+        "secretMessage").style.display="block";
+    }else{
+        alert(
+        "This surprise can only be opened on June 13 ❤️"
+        );
+    }
+}
+// FALLING HEARTS
+for(let i=0;i<40;i++){
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    // Random delay
+    heart.style.animationDelay =
+        Math.random() * 5 + "s";
+    // Random duration
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+    document.body.appendChild(heart);
+}
+function openSecretMessage(){
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth()+1;
+    if(day === 13 && month === 6){
+        document.getElementById(
+        "SecretReveal").style.display="block";
+    }else{
+        alert(
+        "This surprise can only be opened on June 13 ❤️"
+        );
+    }
+}
+function openFutureLetter(){
+    document.getElementById(
+    "futureLetter"
+    ).style.display="block";
+}
+</script>
+<div id="player"></div>
+<script src="https://www.youtube.com/watch?v=2Vv-BfVoq4g&utm_source=chatgpt.com"></script>
+<script>
+function onYouTubeIframeAPIReady() {
+    new YT.Player('player', {
+        height: '0',
+        width: '0',
+        videoId: '2Vv-BfVoq4g',
+        playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: '2Vv-BfVoq4g'
+        }
+    });
+}
+</script>
+</body>
+</html>
