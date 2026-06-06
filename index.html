@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Bristi ❤️ </title>
+<title>Happy Birthday Bristi </title>
 <style>
 *{
     margin:0;
@@ -105,8 +105,8 @@ footer{
 </head>
 <body>
 <!-- PASSWORD SCREEN -->
-<div id="countdownScreen" class="section">
-<h1>🎂 Bristi's Birthday Countdown❤️</h1>
+<!-- <div id="countdownScreen" class="section">
+<h1>🎂 Bristi's Birthday Countdown</h1>
 <div class="card">
     <h2 id="preCountdown">Loading...</h2>
     <p>
@@ -114,8 +114,8 @@ footer{
     </p>
 </div>
 </div>
-<div id="lockScreen" style="display:none;">
-<!-- <div id="lockScreen"> -->
+<div id="lockScreen" style="display:none;"> -->
+<div id="lockScreen">
 <h1> Birthday Wish Only For You </h1>
 <p>Enter Password</p>
 <input type="password" id="password">
@@ -258,18 +258,31 @@ Made With By Souharda Saha
 </div>
 <script>
 // PASSWORD
+// function unlockWebsite(){
+//     const pass =document.getElementById("password").value;
+//     if(pass === "LOVEFOREVER"){
+//         document.getElementById(
+//         "lockScreen"
+//         ).style.display="none";
+//         document.getElementById(
+//         "mainSite"
+//         ).style.display="block";
+//         document.getElementById(
+//         "bgMusic"
+//         ).play();
+//     }else{
+//         alert("Wrong Password");
+//     }
+// }
 function unlockWebsite(){
-    const pass =document.getElementById("password").value;
+    const pass = document.getElementById("password").value;
     if(pass === "LOVEFOREVER"){
-        document.getElementById(
-        "lockScreen"
-        ).style.display="none";
-        document.getElementById(
-        "mainSite"
-        ).style.display="block";
-        document.getElementById(
-        "bgMusic"
-        ).play();
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("mainSite").style.display = "block";
+        const music = document.getElementById("bgMusic");
+        music.play().catch(err => {
+            console.log("Playback blocked:", err);
+        });
     }else{
         alert("Wrong Password");
     }
